@@ -106,7 +106,7 @@
                             <h1>Contact Us</h1>
                         </div>
                     </div>
-                    
+
                     <table class="table table-dark mb-0 wow fadeInUp" data-wow-delay="0.3s">
                         <tr>
                             <td>PHONE</td>
@@ -116,20 +116,19 @@
                             <td>E-MAIL</td>
                             <td>mediagrade.in@gmail.com</td>
                         </tr>
-                        
+
                         <tr class="border-dark">
                             <td>FOLLOW US</td>
                             <td>
-                                <a class="me-1" href="#!"><i class="fab fa-x-twitter"></i></a>
-                                <a class="me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
                                 <a class="me-1" href="#!"><i class="fab fa-youtube"></i></a>
-                                <a class="me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="me-1" href="#!"><i class="fab fa-linkedin"></i></a>
+                                <a class="me-1" href="#!"><i class="fab fa-instagram"></i></a>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
+                    <form id="mediaContactForm" onsubmit="sendMediaEmail(event)">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -188,37 +187,36 @@
 
         <!-- Logo -->
         <a href="https://prebuiltui.com?utm_source=genesis">
-            <img src="img/Black_logo.png" alt="logo" style="height: 100px; width: auto;" />
+            <img src="img/white_logo.png" alt="logo" style="height: 120px; width: auto;" />
         </a>
 
         <!-- Links -->
         <div class="d-flex flex-wrap justify-content-center gap-4 py-4">
-            <a href="#terms-of-service" class="footer-link">Terms of Service</a>
-            <a href="#privacy-policy" class="footer-link">Privacy Policy</a>
-            <a href="#security" class="footer-link">Security</a>
-            <a href="#sitemap" class="footer-link">Sitemap</a>
+            <a href="terms_and_conditions.html" class="footer-link">Terms and conditions</a>
+            <a href="privacy_policy.html" class="footer-link">Privacy Policy</a>
+            
         </div>
 
         <!-- Social Icons (Lucide) -->
         <div class="d-flex justify-content-center gap-4 pb-4">
-            <a href="#" class="social-icon"><i data-lucide="dribbble"></i></a>
+            <a href="#" class="social-icon"><i data-lucide="youtube"></i></a>
             <a href="#" class="social-icon"><i data-lucide="linkedin"></i></a>
-            <a href="#" class="social-icon"><i data-lucide="twitter"></i></a>
-            <a href="#" class="social-icon"><i data-lucide="github"></i></a>
+            <a href="#" class="social-icon"><i data-lucide="instagram"></i></a>
+            <!-- <a href="#" class="social-icon"><i data-lucide="facebook"></i></a> -->
         </div>
 
         <hr class="border-light opacity-25">
 
         <!-- Bottom -->
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 py-3">
-            <p class="mb-0">Build AI agents for free</p>
+            <p class="mb-0"></p>
 
             <p class="mb-0 text-secondary small">
                 © 2026
                 <a href="https://prebuiltui.com?utm_source=genesis" target="_blank" class="footer-link">
                     mediagrade
                 </a>
-                
+
                 All rights reserved.
             </p>
         </div>
@@ -247,6 +245,58 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script>
+        (function () {
+            emailjs.init("IEtlfI87lRwr7F2MA"); // 🔑 Your PUBLIC KEY
+        })();
+    </script>
+    <script>
+        function sendMediaEmail(e) {
+            e.preventDefault(); // stop page reload
+
+            const btn = e.target.querySelector("button");
+            const originalText = btn.innerHTML;
+
+            // Button loading state
+            btn.disabled = true;
+            btn.innerHTML = "Sending...";
+
+            emailjs.send(
+                "service_nycydhm",      // 🔹 Your SERVICE ID
+                "template_aha3ca6",     // 🔹 Your TEMPLATE ID
+                {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    subject: document.getElementById("subject").value,
+                    message: document.getElementById("message").value,
+                }
+            )
+                .then(() => {
+                    btn.innerHTML = "✔ Message Sent";
+                    e.target.reset();
+
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 3000);
+                })
+                .catch(error => {
+                    btn.innerHTML = "❌ Failed";
+                    console.error(error);
+
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 3000);
+                });
+        }
+    </script>
+
 </body>
 
 </html>

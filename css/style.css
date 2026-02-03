@@ -504,3 +504,95 @@ i[data-lucide] {
     width: 22px;
     height: 22px;
 }
+/* Black & white by default */
+.hover-color {
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* On hover → full color */
+.hover-color:hover {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+a:hover .hover-color {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+
+
+/* Service images default: black & white */
+.service-img-hover {
+    filter: grayscale(100%) brightness(0.85);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Hover effect when image OR whole service block is hovered */
+.service-item:hover .service-img-hover {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.05);
+}
+
+/* See More Button */
+.see-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    transition: all 0.35s ease;
+}
+
+/* Hover animation */
+.see-more-btn:hover {
+    background: #fd7e14;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(255, 147, 47, 0.4);
+}
+
+/* Icon animation */
+.see-more-btn i {
+    transition: transform 0.35s ease;
+}
+
+.see-more-btn:hover i {
+    transform: translateX(6px);
+}
+
+
+
+
+/* Clickable video thumbnail */
+.video-thumb {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Wrapper to contain hover effect */
+.thumb-wrapper {
+    position: relative;
+    overflow: hidden;          /* 🔥 THIS FIXES THE ISSUE */
+    border-radius: 12px;
+}
+
+/* Image default state */
+.hover-color {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+/* Hover effect */
+.video-thumb:hover .hover-color {
+    filter: grayscale(0%);
+    transform: scale(1.08);
+}
