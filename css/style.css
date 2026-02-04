@@ -596,3 +596,46 @@ a:hover .hover-color {
     filter: grayscale(0%);
     transform: scale(1.08);
 }
+
+
+.logo-slider {
+    overflow: hidden;
+}
+
+.logo-track img {
+    height: 150px;
+    width: auto;
+    margin: auto;
+}
+
+/* slick spacing */
+.slick-slide {
+    margin: 0 30px;
+}
+
+
+/* spacing between logos */
+.logo-track .slick-slide {
+    margin: 0 40px;   /* increase/decrease as needed */
+}
+
+
+.logo-slider {
+    overflow: hidden;
+
+    /* fade edges */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 12%,
+        black 88%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 12%,
+        black 88%,
+        transparent
+    );
+}
