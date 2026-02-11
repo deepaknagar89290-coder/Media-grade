@@ -120,9 +120,11 @@
                         <tr class="border-dark">
                             <td>FOLLOW US</td>
                             <td>
-                                <a class="me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                                <a class="me-1" href="https://www.youtube.com/channel/UCzOPM1wNMz1tGtOeje8uKig/"
+                                    target="_blank"><i class="fab fa-youtube"></i></a>
                                 <a class="me-1" href="#!"><i class="fab fa-linkedin"></i></a>
-                                <a class="me-1" href="#!"><i class="fab fa-instagram"></i></a>
+                                <a class="me-1" href="https://www.instagram.com/mediagrade.in/" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
                             </td>
                         </tr>
                     </table>
@@ -142,6 +144,14 @@
                                     <input type="email" class="form-control bg-secondary border-0" id="email"
                                         placeholder="Your Email">
                                     <label for="email">Your Email</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="date" class="form-control bg-secondary border-0" id="date"
+                                        placeholder="DD-MM-YYYY">
+                                    <label for="date">DD-MM-YYYY</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -194,14 +204,16 @@
         <div class="d-flex flex-wrap justify-content-center gap-4 py-4">
             <a href="terms_and_conditions.html" class="footer-link">Terms and conditions</a>
             <a href="privacy_policy.html" class="footer-link">Privacy Policy</a>
-            
+
         </div>
 
         <!-- Social Icons (Lucide) -->
         <div class="d-flex justify-content-center gap-4 pb-4">
-            <a href="#" class="social-icon"><i data-lucide="youtube"></i></a>
+            <a href="https://www.youtube.com/channel/UCzOPM1wNMz1tGtOeje8uKig/" class="social-icon" target="_blank"><i
+                    data-lucide="youtube"></i></a>
             <a href="#" class="social-icon"><i data-lucide="linkedin"></i></a>
-            <a href="#" class="social-icon"><i data-lucide="instagram"></i></a>
+            <a href="https://www.instagram.com/mediagrade.in/" class="social-icon" target="_blank"><i
+                    data-lucide="instagram"></i></a>
             <!-- <a href="#" class="social-icon"><i data-lucide="facebook"></i></a> -->
         </div>
 
@@ -296,6 +308,23 @@
                 });
         }
     </script>
+
+    <script>
+        const dateInput = document.getElementById("date");
+
+        dateInput.addEventListener("focus", function () {
+            this.type = "date";
+        });
+
+        dateInput.addEventListener("blur", function () {
+            if (this.value) {
+                const parts = this.value.split("-");
+                this.value = `${parts[2]}-${parts[1]}-${parts[0]}`;
+            }
+            this.type = "text";
+        });
+    </script>
+
 
 </body>
 
