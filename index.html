@@ -515,7 +515,7 @@
                             “From shooting angles to lighting, everything was on point. He knows exactly how to make a
                             detailing studio look premium on camera. The final videos helped us attract better clients.”
                         </p>
-                        <p class="text-secondary mb-0">-  Mr. Manish jain</p>
+                        <p class="text-secondary mb-0">- Mr. Manish jain</p>
                     </div>
                 </div>
 
@@ -702,9 +702,11 @@
 
         <!-- Social Icons (Lucide) -->
         <div class="d-flex justify-content-center gap-4 pb-4">
-            <a href="https://www.https://www.youtube.com/channel/UCzOPM1wNMz1tGtOeje8uKig/" class="social-icon" target="_blank"><i data-lucide="youtube"></i></a>
+            <a href="https://www.https://www.youtube.com/channel/UCzOPM1wNMz1tGtOeje8uKig/" class="social-icon"
+                target="_blank"><i data-lucide="youtube"></i></a>
             <a href="#" class="social-icon"><i data-lucide="linkedin"></i></a>
-            <a href="https://www.instagram.com/mediagrade.in/" class="social-icon" target="_blank"><i data-lucide="instagram"></i></a>
+            <a href="https://www.instagram.com/mediagrade.in/" class="social-icon" target="_blank"><i
+                    data-lucide="instagram"></i></a>
             <!-- <a href="#" class="social-icon"><i data-lucide="facebook"></i></a> -->
         </div>
 
@@ -811,7 +813,7 @@
     <script>
         $(document).ready(function () {
             $('.logo-track').slick({
-                slidesToShow: 4,
+                slidesToShow: 6,
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 0,
@@ -824,12 +826,16 @@
                 pauseOnFocus: false,
                 responsive: [
                     {
+                        breakpoint: 992,
+                        settings: { slidesToShow: 4 }
+                    },
+                    {
                         breakpoint: 768,
-                        settings: { slidesToShow: 3 }
+                        settings: { slidesToShow: 3 }   // ✅ mobile/tablet
                     },
                     {
                         breakpoint: 520,
-                        settings: { slidesToShow: 2 }
+                        settings: { slidesToShow: 3 }   // ✅ small phones also 3
                     }
                 ]
             });
