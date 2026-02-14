@@ -766,14 +766,14 @@ html, body{
   }
 
   /* Logo slider images smaller on mobile */
-  .logo-track img{
-    height: 180px;
-  }
+  .logo-track img {
+        height: 95px; /* Bigger than before but still fits 3 */
+        width: auto;
+    }
 
-  /* Slick spacing smaller on mobile */
-  .slick-slide{
-    margin: 0 14px;
-  }
+    .slick-slide {
+        margin: 0 10px;   /* reduce spacing so logos look larger */
+    }
 }
 
 /* <= 768px (phones) */
