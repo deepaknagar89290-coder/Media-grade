@@ -664,3 +664,165 @@ textarea.form-control:focus {
     box-shadow: 0 0 0 0.25rem rgba(253, 126, 20, 0.35);
     outline: none;
 }
+
+
+
+/* =========================
+   RESPONSIVE FIX PACK (Mobile)
+   ========================= */
+
+/* 1) Make header video behave like an image background */
+.carousel-video{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* 2) Improve caption spacing on small screens */
+.carousel-caption{
+  padding-top: 100px; /* desktop default */
+}
+
+/* 3) Fix huge navbar padding on phones */
+.navbar .navbar-nav .nav-link{
+  padding: 40px 0; /* desktop default */
+}
+
+/* 4) Prevent horizontal overflow from big paddings */
+html, body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   MOBILE BREAKPOINTS
+   ========================= */
+
+/* <= 992px (tablets & phones) */
+@media (max-width: 991.98px){
+
+  /* Navbar becomes normal height + cleaner */
+  .navbar{
+    padding: 12px 0;
+  }
+
+  .navbar .navbar-nav .nav-link{
+    padding: 10px 0;       /* FIX */
+    font-size: 16px;
+  }
+
+  /* Carousel caption spacing */
+  .carousel-caption{
+    padding-top: 90px;
+    padding-left: 18px;
+    padding-right: 18px;
+    text-align: center;
+  }
+
+  /* Video height for mobile */
+  .carousel-video{
+    height: 70vh;
+  }
+
+  /* Big title scaling */
+  .carousel-caption h1.display-1{
+    font-size: clamp(34px, 7vw, 56px);
+    line-height: 1.05;
+  }
+
+  .carousel-caption p.fs-5{
+    font-size: 16px !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* Section paddings */
+  section{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Cards become full width */
+  .feature-card{
+    max-width: 100% !important;
+  }
+
+  /* Service blocks: remove huge rounded edges on small screens */
+  .service-item.service-item-left,
+  .service-item.service-item-right{
+    border-radius: 24px;
+  }
+
+  /* Reduce image padding inside service items */
+  .service-item .service-img{
+    padding: 20px !important;
+  }
+
+  /* Reduce heavy ring around service image on mobile */
+  .service-item .service-img::before{
+    width: calc(100% - 7rem);
+    height: calc(100% - 7rem);
+    border: 1.6rem solid rgba(0,0,0,.45);
+  }
+
+  /* Logo slider images smaller on mobile */
+  .logo-track img{
+    height: 90px;
+  }
+
+  /* Slick spacing smaller on mobile */
+  .slick-slide{
+    margin: 0 14px;
+  }
+}
+
+/* <= 768px (phones) */
+@media (max-width: 767.98px){
+
+  /* Service layout already becomes column; make text padding tighter */
+  .service-text{
+    padding: 18px !important;
+    text-align: center;
+  }
+
+  /* Reduce title underline thickness effect spacing */
+  .title .title-center h1{
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  /* Testimonials: reduce padding */
+  .testimonial-card{
+    padding: 18px !important;
+  }
+
+  /* Footer spacing */
+  footer.glass{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* <= 576px (small phones) */
+@media (max-width: 575.98px){
+
+  /* Even tighter caption */
+  .carousel-caption{
+    padding-top: 80px;
+  }
+
+  .carousel-video{
+    height: 65vh;
+  }
+
+  /* Buttons */
+  .see-more-btn{
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Shorts wrapper (if you use it later) */
+  .shorts-ratio{
+    max-width: 100%;
+  }
+}
