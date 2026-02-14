@@ -767,7 +767,7 @@ html, body{
 
   /* Logo slider images smaller on mobile */
   .logo-track img{
-    height: 90px;
+    height: 180px;
   }
 
   /* Slick spacing smaller on mobile */
