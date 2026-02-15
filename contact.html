@@ -2,330 +2,331 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Media Grade</title>
-    <link rel="icon" type="image/png" href="img/url_logo.png">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <meta charset="utf-8" />
+  <title>Media Grade</title>
+  <link rel="icon" type="image/png" href="img/url_logo.png" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
 
-    <!-- Favicon -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="img/favicon.ico" rel="icon" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+    rel="stylesheet" />
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Customized Bootstrap + Template -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!-- Flatpickr (Dark Calendar) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css" />
+
+  <!-- Flatpickr Orange Accent -->
+  <style>
+    /* Selected day orange */
+    .flatpickr-day.selected,
+    .flatpickr-day.startRange,
+    .flatpickr-day.endRange,
+    .flatpickr-day.selected.inRange,
+    .flatpickr-day.startRange.inRange,
+    .flatpickr-day.endRange.inRange {
+      background: #ff7a00 !important;
+      border-color: #ff7a00 !important;
+      color: #000 !important;
+    }
+
+    /* Today border orange */
+    .flatpickr-day.today {
+      border-color: #ff7a00 !important;
+    }
+
+    /* Hover */
+    .flatpickr-day:hover {
+      background: rgba(255, 122, 0, 0.25) !important;
+      border-color: rgba(255, 122, 0, 0.25) !important;
+    }
+
+    /* Month/Arrows orange */
+    .flatpickr-months .flatpickr-month,
+    .flatpickr-current-month,
+    .flatpickr-monthDropdown-months,
+    .flatpickr-weekday {
+      color: #fff !important;
+    }
+
+    .flatpickr-prev-month svg,
+    .flatpickr-next-month svg {
+      fill: #ff7a00 !important;
+    }
+
+    /* Calendar background darker (optional) */
+    .flatpickr-calendar.dark {
+      background: #0f0f0f !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55) !important;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-    <!-- Spinner End -->
+  </div>
+  <!-- Spinner End -->
 
-
-    <!-- Header Start -->
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-lg-5">
-            <a href="index.html" class="navbar-brand ms-4 ms-lg-0 d-flex align-items-center">
-                <img src="img/logo.png" alt="Poseify Logo" height="80" class="me-2">
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav mx-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link ">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
-                    <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="team.html" class="dropdown-item">Our Models</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
-                        </div>
-                    </div> -->
-                    <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
-                </div>
-                <!-- <div class="d-none d-lg-flex">
-                    <a class="btn btn-outline-primary border-2" href="https://themewagon.com/themes/poseify">Download
-                        Now</a>
-                </div> -->
-            </div>
-        </nav>
-
-        <div class="page-header pb-5">
-            <div class="container text-center py-5">
-                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Contact Us</h1>
-                <!-- <nav aria-label="breadcrumb animated slideInDown">
-                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                        <li class="breadcrumb-item text-primary active" aria-current="page">Contact</li>
-                    </ol>
-                </nav> -->
-            </div>
+  <!-- Header Start -->
+  <div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark px-lg-5">
+      <a href="index.html" class="navbar-brand ms-4 ms-lg-0 d-flex align-items-center">
+        <img src="img/logo.png" alt="Poseify Logo" height="80" class="me-2" />
+      </a>
+      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mx-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About</a>
+          <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+          <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
         </div>
+      </div>
+    </nav>
+
+    <div class="page-header pb-5">
+      <div class="container text-center py-5">
+        <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Contact Us</h1>
+      </div>
     </div>
-    <!-- Header End -->
+  </div>
+  <!-- Header End -->
 
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <div class="title wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="title-left">
-                            <h5>Contact</h5>
-                            <h1>Contact Us</h1>
-                        </div>
-                    </div>
-
-                    <table class="table table-dark mb-0 wow fadeInUp" data-wow-delay="0.3s">
-                        <tr>
-                            <td>PHONE</td>
-                            <td>+91 8447-943-866</td>
-                        </tr>
-                        <tr>
-                            <td>E-MAIL</td>
-                            <td>mediagrade.in@gmail.com</td>
-                        </tr>
-
-                        <tr class="border-dark">
-                            <td>FOLLOW US</td>
-                            <td>
-                                <a class="me-1" href="https://www.youtube.com/channel/UCzOPM1wNMz1tGtOeje8uKig/"
-                                    target="_blank"><i class="fab fa-youtube"></i></a>
-                                <a class="me-1" href="#!"><i class="fab fa-linkedin"></i></a>
-                                <a class="me-1" href="https://www.instagram.com/mediagrade.in/" target="_blank"><i
-                                        class="fab fa-instagram"></i></a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form id="mediaContactForm" onsubmit="sendMediaEmail(event)">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control bg-secondary border-0" id="name"
-                                        placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control bg-secondary border-0" id="email"
-                                        placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="form-floating">
-                                    <input type="date" class="form-control bg-secondary border-0" id="date"
-                                        placeholder="DD-MM-YYYY">
-                                    <label for="date">DD-MM-YYYY</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control bg-secondary border-0" id="subject"
-                                        placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control bg-secondary border-0"
-                                        placeholder="Leave a message here" id="message"
-                                        style="height: 150px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-outline-primary border-2 w-100 py-3" type="submit">Send
-                                    Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+  <!-- Contact Start -->
+  <div class="container-fluid py-5">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <div class="title wow fadeInUp" data-wow-delay="0.1s">
+            <div class="title-left">
+              <h5>Contact</h5>
+              <h1>Contact Us</h1>
             </div>
-        </div>
-    </div>
-    <!-- Contact End -->
+          </div>
 
+          <table class="table table-dark mb-0 wow fadeInUp" data-wow-delay="0.3s">
+            <tr>
+              <td>PHONE</td>
+              <td>+91 8447-943-866</td>
+            </tr>
+            <tr>
+              <td>E-MAIL</td>
+              <td>mediagrade.in@gmail.com</td>
+            </tr>
 
-    <!-- Google Map Start -->
-    <!-- <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.3s">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-            frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"
-            style="width: 100%; height: 500px; filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
-    </div> -->
-    <!-- Google Map End -->
-
-
-    <!-- Footer Start -->
-    <footer class="glass mt-5 pt-5 px-4 px-md-5 text-center text-light">
-
-        <!-- Logo -->
-        <a href="https://www.mediagrade.in ">
-            <img src="img/footer_logo.png" alt="logo" style="height: 120px; width: auto;" />
-        </a>
-
-        <!-- Links -->
-        <div class="d-flex flex-wrap justify-content-center gap-4 py-4">
-            <a href="terms_and_conditions.html" class="footer-link">Terms and conditions</a>
-            <a href="privacy_policy.html" class="footer-link">Privacy Policy</a>
-
-        </div>
-
-        <!-- Social Icons (Lucide) -->
-        <div class="d-flex justify-content-center gap-4 pb-4">
-            <a href="https://www.youtube.com/channel/UCzOPM1wNMz1tGtOeje8uKig/" class="social-icon" target="_blank"><i
-                    data-lucide="youtube"></i></a>
-            <a href="#" class="social-icon"><i data-lucide="linkedin"></i></a>
-            <a href="https://www.instagram.com/mediagrade.in/" class="social-icon" target="_blank"><i
-                    data-lucide="instagram"></i></a>
-            <!-- <a href="#" class="social-icon"><i data-lucide="facebook"></i></a> -->
-        </div>
-
-        <hr class="border-light opacity-25">
-
-        <!-- Bottom -->
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 py-3">
-            <p class="mb-0"></p>
-
-            <p class="mb-0 text-secondary small">
-                © 2026
-                <a href="https://www.mediagrade.in " target="_blank" class="footer-link">
-                    mediagrade
+            <tr class="border-dark">
+              <td>FOLLOW US</td>
+              <td>
+                <a class="me-1" href="https://www.youtube.com/channel/UCzOPM1wNMz1tGtOeje8uKig/" target="_blank">
+                  <i class="fab fa-youtube"></i>
                 </a>
-
-                All rights reserved.
-            </p>
+                <a class="me-1" href="#!"><i class="fab fa-linkedin"></i></a>
+                <a class="me-1" href="https://www.instagram.com/mediagrade.in/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </td>
+            </tr>
+          </table>
         </div>
 
-    </footer>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <!-- IMPORTANT: This renders the icons -->
-    <script>
-        lucide.createIcons();
-    </script>
-    <!-- Footer End -->
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+          <form id="mediaContactForm" onsubmit="sendMediaEmail(event)">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-secondary border-0" id="name" placeholder="Your Name"
+                    required />
+                  <label for="name">Your Name</label>
+                </div>
+              </div>
 
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control bg-secondary border-0" id="email" placeholder="Your Email"
+                    required />
+                  <label for="email">Your Email</label>
+                </div>
+              </div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+              <!-- Date (Flatpickr) -->
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-secondary border-0" id="dateText" placeholder="DD-MM-YYYY"
+                    required readonly />
+                  <label for="dateText">Date</label>
+                </div>
+              </div>
 
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-secondary border-0" id="subject" placeholder="Subject"
+                    required />
+                  <label for="subject">Subject</label>
+                </div>
+              </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control bg-secondary border-0" placeholder="Leave a message here" id="message"
+                    style="height: 150px" required></textarea>
+                  <label for="message">Message</label>
+                </div>
+              </div>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+              <div class="col-12">
+                <button id="sendBtn" class="btn btn-outline-primary border-2 w-100 py-3" type="submit">
+                  Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
 
+      </div>
+    </div>
+  </div>
+  <!-- Contact End -->
 
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- Footer Start -->
+  <footer class="glass mt-5 pt-5 px-4 px-md-5 text-center text-light">
+    <a href="https://www.mediagrade.in">
+      <img src="img/footer_logo.png" alt="logo" style="height: 120px; width: auto" />
+    </a>
 
-    <script>
-        (function () {
-            emailjs.init("IEtlfI87lRwr7F2MA"); // 🔑 Your PUBLIC KEY
-        })();
-    </script>
-    <script>
-        function sendMediaEmail(e) {
-            e.preventDefault(); // stop page reload
+    <div class="d-flex flex-wrap justify-content-center gap-4 py-4">
+      <a href="terms_and_conditions.html" class="footer-link">Terms and conditions</a>
+      <a href="privacy_policy.html" class="footer-link">Privacy Policy</a>
+    </div>
 
-            const btn = e.target.querySelector("button");
-            const originalText = btn.innerHTML;
+    <div class="d-flex justify-content-center gap-4 pb-4">
+      <a href="https://www.youtube.com/channel/UCzOPM1wNMz1tGtOeje8uKig/" class="social-icon" target="_blank">
+        <i data-lucide="youtube"></i>
+      </a>
+      <a href="#" class="social-icon"><i data-lucide="linkedin"></i></a>
+      <a href="https://www.instagram.com/mediagrade.in/" class="social-icon" target="_blank">
+        <i data-lucide="instagram"></i>
+      </a>
+    </div>
 
-            // Button loading state
-            btn.disabled = true;
-            btn.innerHTML = "Sending...";
+    <hr class="border-light opacity-25" />
 
-            emailjs.send(
-                "service_nycydhm",      // 🔹 Your SERVICE ID
-                "template_aha3ca6",     // 🔹 Your TEMPLATE ID
-                {
-                    name: document.getElementById("name").value,
-                    email: document.getElementById("email").value,
-                    subject: document.getElementById("subject").value,
-                    message: document.getElementById("message").value,
-                }
-            )
-                .then(() => {
-                    btn.innerHTML = "✔ Message Sent";
-                    e.target.reset();
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 py-3">
+      <p class="mb-0"></p>
+      <p class="mb-0 text-secondary small">
+        © 2026
+        <a href="https://www.mediagrade.in" target="_blank" class="footer-link">mediagrade</a>
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
 
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.disabled = false;
-                    }, 3000);
-                })
-                .catch(error => {
-                    btn.innerHTML = "❌ Failed";
-                    console.error(error);
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.disabled = false;
-                    }, 3000);
-                });
-        }
-    </script>
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i
+      class="bi bi-arrow-up"></i></a>
 
-    <script>
-        const dateInput = document.getElementById("date");
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-        dateInput.addEventListener("focus", function () {
-            this.type = "date";
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("IEtlfI87lRwr7F2MA"); // PUBLIC KEY
+    })();
+  </script>
+
+  <!-- Flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <script>
+    // Flatpickr init (Dark + DD-MM-YYYY)
+    flatpickr("#dateText", {
+      dateFormat: "d-m-Y",
+      disableMobile: true,
+      allowInput: false
+    });
+
+    function sendMediaEmail(e) {
+      e.preventDefault();
+
+      const btn = document.getElementById("sendBtn");
+      const originalText = btn.innerHTML;
+
+      btn.disabled = true;
+      btn.innerHTML = "Sending...";
+
+      const payload = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        date: document.getElementById("dateText").value.trim(), // already DD-MM-YYYY
+        subject: document.getElementById("subject").value.trim(),
+        message: document.getElementById("message").value.trim(),
+      };
+
+      emailjs.send("service_nycydhm", "template_aha3ca6", payload)
+        .then(() => {
+          btn.innerHTML = "✔ Message Sent";
+          document.getElementById("mediaContactForm").reset();
+
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          }, 3000);
+        })
+        .catch((error) => {
+          btn.innerHTML = "❌ Failed";
+          console.error(error);
+
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          }, 3000);
         });
-
-        dateInput.addEventListener("blur", function () {
-            if (this.value) {
-                const parts = this.value.split("-");
-                this.value = `${parts[2]}-${parts[1]}-${parts[0]}`;
-            }
-            this.type = "text";
-        });
-    </script>
-
-
+    }
+  </script>
 </body>
 
 </html>
