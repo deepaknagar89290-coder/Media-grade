@@ -54,3 +54,10 @@
     
 })(jQuery);
 
+$(window).on('load', function () {
+    $('#spinner').fadeOut();
+});
+$(window).on('load', function () {
+    $('#spinner').removeClass('show');
+    $('#spinner').fadeOut(500);
+});
